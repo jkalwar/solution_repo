@@ -14,6 +14,8 @@
 # For simplicity , the uploaded images will be stored on the server in a folder and the folder path will be stored in the datamodel.
 # I had to integrate the python scripts with the C# code in order to train and test. there was a syntax error in the last line of both the scripts and in the interest of time I went ahead and corrected it to use it. I have added those scripts also in the scripts folder.
 
+# There were many edge cases in the process which require good logging. Whereever I felt the need , I have added //Log comments in the code.
+
 
 # API Endpoints :
 # 1. POST : api/Model/CreateModel/ Parameters : ModelName : Name of the Model , returns the guid of the model. The model meta data is stored in the Models table
