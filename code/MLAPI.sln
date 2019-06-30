@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLAPI", "MLAPI\MLAPI.csproj", "{9EE04DF1-9E08-4C2B-9DE9-6B6FC5276A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLAPI.Domain", "MLAPI.Domain\MLAPI.Domain.csproj", "{CEED1C83-8C3F-4EEE-B258-39AA9C1B0D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLAPI.Service", "MLAPI.Service\MLAPI.Service.csproj", "{DDA15DB9-77AF-482A-9DF3-7EB7F5D7E849}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EE04DF1-9E08-4C2B-9DE9-6B6FC5276A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE04DF1-9E08-4C2B-9DE9-6B6FC5276A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE04DF1-9E08-4C2B-9DE9-6B6FC5276A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE04DF1-9E08-4C2B-9DE9-6B6FC5276A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEED1C83-8C3F-4EEE-B258-39AA9C1B0D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEED1C83-8C3F-4EEE-B258-39AA9C1B0D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEED1C83-8C3F-4EEE-B258-39AA9C1B0D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEED1C83-8C3F-4EEE-B258-39AA9C1B0D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA15DB9-77AF-482A-9DF3-7EB7F5D7E849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA15DB9-77AF-482A-9DF3-7EB7F5D7E849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA15DB9-77AF-482A-9DF3-7EB7F5D7E849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA15DB9-77AF-482A-9DF3-7EB7F5D7E849}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52471ABB-59B2-463C-A7F2-ED8D811DC75A}
+	EndGlobalSection
+EndGlobal

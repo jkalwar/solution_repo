@@ -1,0 +1,37 @@
+﻿CREATE TABLE Models
+(
+	Id UNIQUEIDENTIFIER PRIMARY KEY default NEWID(),
+	ModelName VARCHAR (50)
+)
+
+CREATE TABLE Images
+(
+	Id INT PRIMARY KEY IDENTITY,
+	ModelId UNIQUEIDENTIFIER,
+    ImagePath varchar(200)
+)
+
+CREATE TABLE Experiments (
+    ExperimentId int IDENTITY(1, 1) PRIMARY KEY,
+    ModelId UNIQUEIDENTIFIER,
+    LearningRate decimal,
+    Steps decimal,
+    NumberOfLayers decimal,
+    Accuracy decimal
+);
+
+insert into Models values(newid() , 'test1')
+select * from Models
+CREATE TABLE AccuracyParamters
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	ModelId UNIQUEIDENTIFIER,
+    LearningRate decimal,
+    Steps decimal,
+    NumberOfLayers decimal,
+    Accuracy decimal
+)
+Alter table AccuracyParamters alter column LearningRate decimal(18,4)
+Alter table AccuracyParamters alter column Accuracy decimal(18,4)
+Alter table Experiments alter column LearningRate decimal(18,4)
+Alter table Experiments alter column Accuracy decimal(18,4)
