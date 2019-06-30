@@ -40,7 +40,12 @@ API_ENDPOINT = "http://ml-training-api.azurewebsites.net/api/Model/CreateModel"
 print('This is a test script for the machine learning api - please give the input to create and train the model')
 print()
 # data to be sent to api 
-model_name = input("Enter the name of the model you want to create: ")
+model_name = input("Enter the name of the model you want to create (Name of length >3 && < 50 characters): ")
+if len(model_name) > 50 or len(model_name) < 3:
+    print("Length of string beyond 50 charcters or less than 3 characters , Try again")
+    model_name = input("Enter the name of the model you want to create (Name of length >3 && < 50 characters): ")
+else:
+   print("Length of string beyond 50 charcters or less than 3 characters , Try again by rerunning the script")
 data = {'ModelName':model_name}
 
 # sending post request and saving response as response object 
@@ -62,15 +67,15 @@ API_ENDPOINT = "http://ml-training-api.azurewebsites.net/api/Upload/PostUserImag
 
 print('Let us upload the images , so that the above model can be trained on this data')
 
-directory = input("Please give the folder that contains the images with .jpg OR .png format : ")
-#print(os.path.exists(directory))
+directory = input("Please give the folder that contains the images with .jpg OR .png format (Please give a path that doesnot contain spaces): ")
+print(os.path.exists(directory))
 
-if os.path.exists(directory)=='False':
-    print("The given directory does not exist please give a correct drectory")   
+if os.path.exists(directory) == False:
+    print("The given directory does not exist please give a correct directory")   
     directory = input("Please give the folder that contains the images with .jpg OR .png format (Please give a path that doesnot contain spaces): ")
 else:
-    if(os.path.exists(directory)=='False'):
-       print("The given directory does not exist please give a correct drectory by rerunnin the script") 
+    if(os.path.exists(directory) == False):
+       print("The given directory does not exist please give a correct directory by rerunnin the script") 
        quit()
 
 for file in os.listdir(directory):
@@ -149,23 +154,24 @@ filepath = input("Please give the path of the image in .jpg OR .png format (Plea
 #print(os.path.exists(filepath))
 #print(filepath)
 
-if os.path.exists(filepath)=='False':
-    print("The given directory does not exist please give a correct drectory")   
+if os.path.exists(filepath) == False:
+    print("The given directory does not exist please give a correct directory")   
     filepath = input("Please give the path of the image in .jpg OR .png format : ")
 else:
-    if(os.path.exists(filepath)=='False'):
-       print("The given directory does not exist please give a correct drectory by rerunning the script") 
+    if(os.path.exists(filepath) == False):
+       print("The given directory does not exist please give a correct directory by rerunning the script") 
        quit()
 
 if filepath.endswith(".jpg") or filepath.endswith(".png"): 
-    #print(filepath)
+    
     files = {'media': open(filepath, 'rb')}
     params =  {'guid' : guidData['guid']}
     response = requests.post(API_ENDPOINT, files=files , params=params)
 
     responseJson = response.json()
+    #print(responseJson)
     if responseJson['status'] == 'success':
-        print(responseJson['success'])
+          print("The accuracy for the given test image is +" + str(responseJson['message']['Accuracy']))
     else:
         print(responseJson['error'])
         quit()
