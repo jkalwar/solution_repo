@@ -3,16 +3,17 @@
 
 # The api is hpsted in the azure app service PaaS service.
 # API Base URL : ml-training-api.azurwebsites.net
-# The data model for the api is in the SQL PaaS data base on Azure.
+# The data model for the api is in the SQL PaaS data base on Azure on this server :
+# modeltraining.database.windows.net Databse Name : modeltrainingapi
 # The API is developed in C# using ASP.NET WEB API framework
 # Python scripts are integrated to the API backend services to run the training with the incoming parameters.
 
 # Assumptions
 # 1. This is a machine learning training API , If I understand it correctly the images that the user uploads will need to be
-# stored somewhere so that the ML model can be run on those images.Ideally the images are supposed to be stored somewhere on the storage account in cloud and metadata should be in the datamodel
-# so that python scripts can get the images and the model can be trained on those images
-#
+# stored somewhere so that the ML model can be run on those images.Ideally the images are supposed to be stored somewhere on the storage account in cloud and metadata should be in the datamodel so that python scripts can get the images and the model can be trained on those images.
 # For simplicity , the uploaded images will be stored on the server in a folder and the folder path will be stored in the datamodel.
+# I had to integrate the python scripts with the C# code in order to train and test. there was a syntax error in the last line of both the scripts and in the interest of time I went ahead and corrected it to use it. I have added those scripts also in the scripts folder.
+
 
 # API Endpoints :
 # 1. POST : api/Model/CreateModel/ Parameters : ModelName : Name of the Model , returns the guid of the model. The model meta data is stored in the Models table
@@ -21,7 +22,7 @@
 # 4. GET : api/Experiment/GetBestAccuracy Parameters : ModelId - Gets the paramters for the best accuracy for a specific ModelId.
 # 5. POST: api/Test/TestUserImage Parameters : Image file .jpg OR .png extension with size < =1 MB. This api will give the accuracy of testing the model with a specific ModelId , by using the paramters for the best accuracy
 
-# Test Scripts :
+# Test Scripts : ml_api_test.py
 # Use python 3.6 and above
 
 ####################################################################################################################################
